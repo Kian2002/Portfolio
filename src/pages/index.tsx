@@ -3,7 +3,10 @@ import { Navbar, Hero } from "@/components";
 
 import { Poppins } from "next/font/google";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "900"],
+});
 
 export default function Home() {
   return (
@@ -20,7 +23,7 @@ export default function Home() {
       <header className="p-6 w-full sticky top-0 z-20 bg-transparent backdrop-blur-lg">
         <Navbar />
       </header>
-      <main className={`px-24 ${poppins.className}`}>
+      <main className={`${poppins.className}`}>
         <Hero />
       </main>
     </>
