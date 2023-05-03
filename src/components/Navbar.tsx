@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${poppins.className} flex justify-between p-6 w-full items-center fixed top-0 z-20 bg-transparent backdrop-blur-lg`}
+      className={`${poppins.className} flex justify-between items-center p-6`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
