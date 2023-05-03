@@ -9,3 +9,11 @@
   scroll-behavior: smooth;
   color-scheme: dark;
 }
+
+.menu-gradient {
+  background: #2D3436;
+  background: -webkit-linear-gradient(to right,
+      #111111, #2D3436);
+  background: linear-gradient(to right,
+      #111111, #2D3436);
+}

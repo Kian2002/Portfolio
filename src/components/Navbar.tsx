@@ -43,6 +43,36 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+
+        <div className="sm:hidden">
+          <Image
+            src={toggleMenu ? menuOpen : menu}
+            alt="menu"
+            className="w-7 h-7 cursor-pointer object-contain invert"
+            onClick={() => setToggleMenu(!toggleMenu)}
+          />
+
+          {toggleMenu && (
+            <div className="absolute top-20 right-0 menu-gradient p-6 mx-4 my-2 min-w-[140px] rounded-xl bg-opacity-80 flex flex-col items-center justify-center">
+              {navLinks.map((link) => (
+                <div key={link.id}>
+                  <Link
+                    href={`#${link.id}`}
+                    className={`${
+                      active === link.title ? "text-primary" : "text-white"
+                    } cursor-pointer font-medium text-lg`}
+                    onClick={() => {
+                      setActive(link.title);
+                      setToggleMenu(!toggleMenu);
+                    }}
+                  >
+                    {link.title}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );
