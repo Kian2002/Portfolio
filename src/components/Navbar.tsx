@@ -13,9 +13,7 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <nav
-      className={`${poppins.className} flex justify-between items-center p-6`}
-    >
+    <nav className={`${poppins.className} flex justify-between items-center`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           href={"/"}
