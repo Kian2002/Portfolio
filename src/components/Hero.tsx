@@ -27,14 +27,14 @@ const Hero = () => {
 
       {/* pulling orb */}
       <motion.div
-        initial={{ x: "-100%", y: "0%" }}
+        initial={{ x: "100%", y: "0%" }}
         animate={{
-          x: "100%",
+          x: ["100%", "50%", "100%"],
         }}
         transition={{
-          duration: 7,
+          duration: 3,
         }}
-        className="hidden md:block"
+        className="hidden sm:block"
       >
         <Image
           src={starwars}
@@ -52,7 +52,7 @@ const Hero = () => {
           scale: [1, 1.05, 1],
         }}
         transition={{
-          duration: 7,
+          duration: 5,
         }}
       >
         <div className="border-8 border-primary rounded-full h-72 w-72 sm:h-96 sm:w-96 m-auto relative">
