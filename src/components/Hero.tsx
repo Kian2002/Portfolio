@@ -15,7 +15,19 @@ const Hero = () => {
 
         <div>
           <h1 className="font-black text-white sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2">
-            {"Hi, I'm"} <span className="text-primary">Kian</span>
+            {"Hi, I'm"}{" "}
+            <motion.span
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 120,
+                duration: 1.5,
+              }}
+              className="text-primary absolute ml-3"
+            >
+              Kian
+            </motion.span>
           </h1>
           <p className="text-[#dfd9ff] font-medium sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2 text-white-100">
             I develop Fullstack applications, mobile{" "}
