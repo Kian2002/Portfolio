@@ -10,6 +10,10 @@
   color-scheme: dark;
 }
 
+body {
+  background: #090002;
+}
+
 .menu-gradient {
   background: #2D3436;
   background: -webkit-linear-gradient(to right,

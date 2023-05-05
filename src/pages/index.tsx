@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar, Hero } from "@/components";
+import { Navbar, Hero, About } from "@/components";
 
 import { Poppins } from "next/font/google";
 
@@ -23,8 +23,9 @@ export default function Home() {
       <header className="p-6 w-full sticky top-0 z-20 bg-transparent backdrop-blur-lg">
         <Navbar />
       </header>
-      <main className={`${poppins.className}`}>
+      <main className={`${poppins.className} bg-[#090002]`}>
         <Hero />
+        <About />
       </main>
     </>
   );
