@@ -6,7 +6,7 @@ import { mobileHero, hero, flying, starwars } from "../../public";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto max-w-7xl overflow-hidden">
+    <section className="relative w-full min-h-screen mx-auto max-w-7xl overflow-hidden">
       <div className="max-w-7xl mx-auto sm:px-16 px-6 flex flex-row items-start gap-5">
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-primary" />
@@ -39,7 +39,7 @@ const Hero = () => {
         <Image
           src={starwars}
           alt="starwars"
-          className="absolute top-0 left-0 right-0 bottom-0 z-0 h-72 w-72 sm:h-96 sm:w-96"
+          className="absolute top-0 left-0 right-0 bottom-0 h-72 w-72 sm:h-96 sm:w-96"
         />
       </motion.div>
 
@@ -66,13 +66,13 @@ const Hero = () => {
               repeat: Infinity,
               repeatType: "loop",
             }}
-            className="absolute top-0 left-0 right-0 bottom-0 z-0 border-8 border-primary rounded-full blur-lg"
+            className="absolute top-0 left-0 right-0 bottom-0 border-8 border-primary rounded-full blur-lg"
           />
 
           <Image
             src={mobileHero}
             alt="bitmoji image of Kian"
-            className="md:hidden"
+            className="md:hidden h-full w-full object-scale-down"
           />
 
           <Image
@@ -84,7 +84,7 @@ const Hero = () => {
       </motion.div>
 
       {/* scroll notifier */}
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center mt-5 lg:mt-20">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-gray-400 flex justify-center items-start p-2">
             <motion.div
@@ -111,7 +111,7 @@ const Hero = () => {
           stiffness: 120,
           damping: 10,
         }}
-        className="absolute z-50 w-32 h-32 top-20 right-0 rounded translate-x-1/2 translate-y-1/2"
+        className="absolute w-32 h-32 top-20 right-0 rounded translate-x-1/2 translate-y-1/2"
       >
         <Image
           src={flying}
