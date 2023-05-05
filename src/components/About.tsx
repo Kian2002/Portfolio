@@ -10,14 +10,14 @@ const About = () => {
         transition={{ duration: 0.4 }}
       >
         <p className="text-gray-400 text-xl mb-2">INTRODUCTION</p>
-        <h2 className="text-7xl mb-2 font-black">About.</h2>
+        <h2 className="sm:text-7xl text-5xl mb-2 font-black">About.</h2>
       </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-6 mb-12 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         {`I am a highly motivated software developer with a 4.19 GPA on the Dean's
         Honour Roll, with a strong combination of technical skills and
