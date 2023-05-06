@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { Orb, ScrollNotifier } from "@/components";
+import { Orb, ScrollNotifier, Socials } from "@/components";
 import Plane from "./Plane";
 
 const Hero = () => {
@@ -34,6 +34,7 @@ const Hero = () => {
             <br className="sm:block hidden" />
             apps, and dabble in some game development.
           </p>
+          <Socials />
         </div>
       </div>
 
