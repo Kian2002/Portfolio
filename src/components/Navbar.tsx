@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 import { navLinks } from "@/constants";
-import { menu, menuOpen } from "../../public";
 import { Poppins } from "next/font/google";
+import { Menu } from "@/components";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <nav className={`${poppins.className} flex justify-between items-center`}>
@@ -42,35 +40,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="sm:hidden">
-          <Image
-            src={toggleMenu ? menuOpen : menu}
-            alt="menu"
-            className="w-7 h-7 cursor-pointer object-contain invert"
-            onClick={() => setToggleMenu(!toggleMenu)}
-          />
-
-          {toggleMenu && (
-            <div className="absolute top-20 right-0 menu-gradient p-6 mx-4 my-2 min-w-[140px] rounded-xl bg-opacity-80 flex flex-col items-center justify-center">
-              {navLinks.map((link) => (
-                <div key={link.id}>
-                  <Link
-                    href={`#${link.id}`}
-                    className={`${
-                      active === link.title ? "text-primary" : "text-white"
-                    } cursor-pointer font-medium text-lg`}
-                    onClick={() => {
-                      setActive(link.title);
-                      setToggleMenu(!toggleMenu);
-                    }}
-                  >
-                    {link.title}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        {/* Mobile nav */}
+        <Menu active={active} setActive={setActive} />
       </div>
     </nav>
   );
