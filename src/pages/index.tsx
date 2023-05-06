@@ -23,7 +23,7 @@ export default function Home() {
       <header className="p-6 w-full sticky top-0 z-20 bg-transparent backdrop-blur-lg">
         <Navbar />
       </header>
-      <main className={`${poppins.className} bg-[#090002]`}>
+      <main className={`${poppins.className}`}>
         <Hero />
         <About />
       </main>
