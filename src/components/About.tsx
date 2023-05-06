@@ -40,7 +40,7 @@ const About = () => {
         I can continue to grow and develop my skills.`}
       </motion.p>
 
-      <div className="flex flex-col sm:flex-row items-center gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-10">
         {niches.map((niche, index) => (
           <Tilt key={niche.title} className="xs:w-[250px] w-full rounded-3xl">
             <motion.div
