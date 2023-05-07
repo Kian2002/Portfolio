@@ -43,8 +43,13 @@ interface MenuProps {
 
 const Menu = ({ active, setActive }: MenuProps) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
-    <div className="sm:hidden">
+    <motion.div
+      initial={false}
+      animate={toggleMenu ? "open" : "closed"}
+      className="sm:hidden"
+    >
       <Image
         src={toggleMenu ? menuOpen : menu}
         alt="menu"
@@ -53,24 +58,23 @@ const Menu = ({ active, setActive }: MenuProps) => {
       />
 
       {toggleMenu && (
-        <motion.div
+        <motion.ul
           variants={containerVariants}
           initial="closed"
-          animate={toggleMenu ? "open" : "closed"}
           className="absolute top-20 right-0 menu-gradient p-6 mx-4 my-2 min-w-[140px] rounded-xl bg-opacity-80 flex flex-col items-center justify-center"
         >
           {navLinks.map((link) => (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              variants={itemVariants}
+              initial="closed"
+              animate={toggleMenu ? "open" : "closed"}
               key={link.id}
             >
               <Link
                 href={`#${link.id}`}
                 className={`${
-                  active === link.title ? "text-primary" : "text-white"
-                } cursor-pointer font-medium text-lg`}
+                  active === link.title ? "text-secondary" : "text-white"
+                } cursor-pointer font-black text-lg`}
                 onClick={() => {
                   setActive(link.title);
                   setToggleMenu(!toggleMenu);
@@ -80,9 +84,9 @@ const Menu = ({ active, setActive }: MenuProps) => {
               </Link>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.ul>
       )}
-    </div>
+    </motion.div>
   );
 };
 

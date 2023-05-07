@@ -15,11 +15,11 @@ body {
 }
 
 .menu-gradient {
-  background: #2D3436;
+  background: #3b000b;
   background: -webkit-linear-gradient(to right,
-      #111111, #2D3436);
+      #ffffff, #3b000b);
   background: linear-gradient(to right,
-      #111111, #2D3436);
+      #ffffff, #3b000b);
 }
 
 .hero-gradient {
