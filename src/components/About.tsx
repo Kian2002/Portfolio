@@ -16,8 +16,10 @@ const About = () => {
         whileInView={{ opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <p className="text-tertiary text-xl mb-2">INTRODUCTION</p>
-        <h2 className="sm:text-7xl text-5xl mb-2 font-black text-white">
+        <p className="sm:text-[18px] text-[14px] text-tertiary uppercase tracking-wider">
+          INTRODUCTION
+        </p>
+        <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
           About.
         </h2>
       </motion.div>
