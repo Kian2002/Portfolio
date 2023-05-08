@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative w-full min-h-[calc(100vh-84px)] mx-auto max-w-7xl overflow-hidden px-6 sm:px-16"
+      className="relative w-full min-h-screen py-24 mx-auto max-w-7xl overflow-hidden px-6 sm:px-16"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
