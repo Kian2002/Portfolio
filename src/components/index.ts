@@ -5,5 +5,6 @@ import Orb from "./Orb";
 import ScrollNotifier from "./ScrollNotifier";
 import Socials from "./Socials";
 import Menu from "./Menu";
+import Work from "./Work";
 
-export { Navbar, Hero, About, Orb, ScrollNotifier, Socials, Menu };
+export { Navbar, Hero, About, Orb, ScrollNotifier, Socials, Menu, Work };
