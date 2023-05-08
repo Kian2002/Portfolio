@@ -11,7 +11,10 @@ import Image from "next/image";
 
 const Work = () => {
   return (
-    <section className="relative w-full min-h-screen py-20 mx-auto max-w-7xl overflow-hidden px-6 sm:px-16">
+    <section
+      id="work"
+      className="relative w-full min-h-screen py-20 mx-auto max-w-7xl overflow-hidden px-6 sm:px-16"
+    >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
