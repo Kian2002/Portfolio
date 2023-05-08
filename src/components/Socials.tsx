@@ -6,7 +6,7 @@ import { linkedin, github, resume } from "../../public";
 
 const Socials = () => {
   return (
-    <div className="flex flex-row mt-10 gap-5">
+    <div className="flex flex-row sm:mt-10 mt-3 gap-5">
       <Link href="https://www.linkedin.com/in/kianabd/" target="_blank">
         <Image
           src={linkedin}
