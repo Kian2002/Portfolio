@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar, Hero, About, Work } from "@/components";
+import { Navbar, Hero, About, Work, Skills } from "@/components";
 
 import { Poppins } from "next/font/google";
 
@@ -26,6 +26,7 @@ export default function Home() {
       <main className={`${poppins.className}`}>
         <Hero />
         <About />
+        <Skills />
         <Work />
       </main>
     </>
