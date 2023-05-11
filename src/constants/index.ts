@@ -1,4 +1,30 @@
-import { web, backend, mobile, software, earls } from "../../public";
+import {
+  web,
+  backend,
+  mobile,
+  software,
+  earls,
+  html,
+  css,
+  js,
+  ts,
+  react,
+  next,
+  node,
+  java,
+  cpp,
+  lua,
+  express,
+  ejs,
+  bootstrap,
+  tailwind,
+  mongo,
+  postgres,
+  firebase,
+  postman,
+  git,
+  github,
+} from "../../public";
 
 export const navLinks = [
   {
@@ -35,6 +61,89 @@ export const niches = [
   {
     title: "Game Developer",
     icon: software,
+  },
+];
+
+export const skills = [
+  {
+    title: "HTML",
+    icon: html,
+  },
+  {
+    title: "CSS",
+    icon: css,
+  },
+  {
+    title: "JavaScript",
+    icon: js,
+  },
+  {
+    title: "TypeScript",
+    icon: ts,
+  },
+  {
+    title: "React",
+    icon: react,
+  },
+  {
+    title: "Next.js",
+    icon: next,
+  },
+  {
+    title: "Node.js",
+    icon: node,
+  },
+  {
+    title: "Java",
+    icon: java,
+  },
+  {
+    title: "C++",
+    icon: cpp,
+  },
+  {
+    title: "Lua",
+    icon: lua,
+  },
+  {
+    title: "Express.js",
+    icon: express,
+  },
+  {
+    title: "EJS",
+    icon: ejs,
+  },
+  {
+    title: "Bootstrap",
+    icon: bootstrap,
+  },
+  {
+    title: "Tailwind",
+    icon: tailwind,
+  },
+  {
+    title: "MongoDB",
+    icon: mongo,
+  },
+  {
+    title: "PostgreSQL",
+    icon: postgres,
+  },
+  {
+    title: "Firebase",
+    icon: firebase,
+  },
+  {
+    title: "Postman",
+    icon: postman,
+  },
+  {
+    title: "Git",
+    icon: git,
+  },
+  {
+    title: "GitHub",
+    icon: github,
   },
 ];
 
