@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+
 import { ProjectProps } from "@/constants/types";
 import { projects } from "@/constants";
+import { Notification } from "@/components";
 
 const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
   return (
@@ -62,12 +64,26 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
 
 const Projects = () => {
   const [loadedProjects, setLoadedProjects] = useState(projects.slice(0, 3));
+  const [Notifications, setNotifications] = useState([{ message: "" }]);
+
+  useEffect(() => {
+    const clearNotifications = setTimeout(() => {
+      setNotifications([]);
+    }, 3000);
+
+    return () => clearTimeout(clearNotifications);
+  }, [Notifications]);
 
   const loadMoreProjects = () => {
     setLoadedProjects(projects.slice(0, loadedProjects.length + 3));
 
     if (loadedProjects.length === projects.length) {
-      <Notification message="No more projects to show" />;
+      setNotifications([
+        ...Notifications,
+        {
+          message: "No more projects to show.",
+        },
+      ]);
     }
   };
 
@@ -101,6 +117,14 @@ const Projects = () => {
           Show More
         </button>
       </div>
+
+      {Notifications.map((notification, index) => (
+        <Notification
+          key={index}
+          message={notification.message}
+          index={index}
+        />
+      ))}
     </section>
   );
 };

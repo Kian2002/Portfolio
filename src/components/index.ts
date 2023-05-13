@@ -8,5 +8,6 @@ import Menu from "./Menu";
 import Work from "./Work";
 import Skills from "./Skills";
 import Projects from "./Projects";
+import Notification from "./Notification";
 
-export { Navbar, Hero, About, Orb, ScrollNotifier, Socials, Menu, Work, Skills, Projects };
+export { Navbar, Hero, About, Orb, ScrollNotifier, Socials, Menu, Work, Skills, Projects, Notification };
