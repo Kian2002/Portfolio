@@ -11,3 +11,8 @@ export interface ProjectProps {
     project: IProject;
     index: number;
 }
+
+export interface NotificationProps {
+    message: string;
+    index: number;
+}
