@@ -25,6 +25,7 @@ import {
   git,
   github,
 } from "../../public";
+import { IProject } from "./types";
 
 export const navLinks = [
   {
@@ -181,3 +182,14 @@ export const experiences = [
     ],
   },
 ];
+
+export const projects: IProject[] = [
+  {
+    title: "asdas",
+    description: "asdasd",
+    image: earls,
+    link: "www.google.com",
+    github: "www.google.com",
+    tags: ["React", "Bob", "Smith"],
+  },
+]
