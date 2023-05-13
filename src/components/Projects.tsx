@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
@@ -6,48 +6,71 @@ import { motion } from "framer-motion";
 import { ProjectProps } from "@/constants/types";
 import { projects } from "@/constants";
 
-const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
   return (
-    <Tilt
-      className="w-full rounded-2xl shadow-xl cursor-pointer bg-secondary p-5 sm:w-[360px]"
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
-      glareEnable={true}
-      glareMaxOpacity={0.45}
-      glarePosition="all"
-      scale={1.05}
-      transitionSpeed={2500}
-      gyroscope={true}
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        type: "spring",
+        delay: index < 3 ? index * 0.5 : index * 0.2,
+        duration: 0.75,
+        ease: "easeOut",
+      }}
     >
-      <Link href={project.link} passHref target="_blank">
-        <div className="relative w-full h-[230px]">
-          <Image
-            src={project.image}
-            alt={project.title}
-            height={100}
-            width={100}
-            className="rounded-2xl w-full h-full object-cover"
-          />
-        </div>
+      <Tilt
+        className="w-full rounded-2xl shadow-xl cursor-pointer bg-secondary p-5 sm:w-[360px]"
+        tiltMaxAngleX={10}
+        tiltMaxAngleY={10}
+        glareEnable={true}
+        glareMaxOpacity={0.45}
+        glarePosition="all"
+        transitionSpeed={2500}
+        gyroscope={true}
+      >
+        <Link href={project.link} passHref target="_blank">
+          <div className="relative w-full h-[230px]">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="rounded-2xl w-full h-full object-cover"
+            />
+          </div>
 
-        <div className="flex flex-col justify-between mt-5">
-          <h3 className="text-white font-black text-[30px]">{project.title}</h3>
-          <p className="text-tertiary text-[14px]">{project.description}</p>
-        </div>
+          <div className="flex flex-col justify-between mt-5">
+            <h3 className="text-white font-black text-[30px]">
+              {project.title}
+            </h3>
+            <p className="text-tertiary text-[14px] mt-2">
+              {project.description}
+            </p>
+          </div>
 
-        <div>
-          {project.tags.map((tag, index) => (
-            <span key={index} className="text-tertiary text-[14px]">
-              {tag} {index !== project.tags.length - 1 && "/ "}
-            </span>
-          ))}
-        </div>
-      </Link>
-    </Tilt>
+          <div className="mt-5">
+            {project.tags.map((tag, index) => (
+              <span key={index} className="text-tertiary text-[14px]">
+                {tag} {index !== project.tags.length - 1 && "/ "}
+              </span>
+            ))}
+          </div>
+        </Link>
+      </Tilt>
+    </motion.div>
   );
 };
 
 const Projects = () => {
+  const [loadedProjects, setLoadedProjects] = useState(projects.slice(0, 3));
+
+  const loadMoreProjects = () => {
+    setLoadedProjects(projects.slice(0, loadedProjects.length + 3));
+
+    if (loadedProjects.length === projects.length) {
+      <Notification message="No more projects to show" />;
+    }
+  };
+
   return (
     <section
       id="projects"
@@ -67,10 +90,16 @@ const Projects = () => {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
+        {loadedProjects.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} />
         ))}
+      </div>
+
+      <div className="flex justify-center mt-20">
+        <button className="bg-secondary p-4 rounded" onClick={loadMoreProjects}>
+          Show More
+        </button>
       </div>
     </section>
   );
