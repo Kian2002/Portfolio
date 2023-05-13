@@ -81,7 +81,7 @@ const Projects = () => {
       setNotifications([
         ...notifications,
         {
-          message: "No more projects to show.",
+          message: "No more projects to show. I will add more soon!",
         },
       ]);
     }
