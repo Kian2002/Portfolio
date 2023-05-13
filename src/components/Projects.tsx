@@ -64,7 +64,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
 
 const Projects = () => {
   const [loadedProjects, setLoadedProjects] = useState(projects.slice(0, 3));
-  const [Notifications, setNotifications] = useState([{ message: "" }]);
+  const [notifications, setNotifications] = useState([{ message: "" }]);
 
   useEffect(() => {
     const clearNotifications = setTimeout(() => {
@@ -72,14 +72,14 @@ const Projects = () => {
     }, 3000);
 
     return () => clearTimeout(clearNotifications);
-  }, [Notifications]);
+  }, [notifications]);
 
   const loadMoreProjects = () => {
     setLoadedProjects(projects.slice(0, loadedProjects.length + 3));
 
     if (loadedProjects.length === projects.length) {
       setNotifications([
-        ...Notifications,
+        ...notifications,
         {
           message: "No more projects to show.",
         },
@@ -118,13 +118,14 @@ const Projects = () => {
         </button>
       </div>
 
-      {Notifications.map((notification, index) => (
-        <Notification
-          key={index}
-          message={notification.message}
-          index={index}
-        />
-      ))}
+      {loadedProjects.length == projects.length &&
+        notifications.map((notification, index) => (
+          <Notification
+            key={index}
+            message={notification.message}
+            index={index}
+          />
+        ))}
     </section>
   );
 };
