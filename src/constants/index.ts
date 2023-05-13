@@ -185,11 +185,53 @@ export const experiences = [
 
 export const projects: IProject[] = [
   {
-    title: "asdas",
-    description: "asdasd",
-    image: earls,
-    link: "www.google.com",
-    github: "www.google.com",
-    tags: ["React", "Bob", "Smith"],
+    title: "E-Commerce",
+    description: "This is an e-commerce app built using React, React Router, Framer Motion, and React-responsive-carousel for the front end, and Node, Express, Cloudinary, and axios for the backend. The app uses Stripe for a test/example checkout and Rawg API for the data.",
+    image: "https://camo.githubusercontent.com/39bffa5e4727272709902837f0e7b017bf2eb0f40bd02be53dfd5d6cdb47a80e/68747470733a2f2f692e696d6775722e636f6d2f344d55776763552e706e67",
+    link: "https://e-commerce-kian2002.vercel.app/",
+    github: "https://github.com/Kian2002/E-commerce",
+    tags: ["TypeScript", "React", "Node", "Express", "MongoDB", "Cloudinary", "Stripe", "Rawg API"],
+  },
+  {
+    title: "CRM-System",
+    description: "",
+    image: "",
+    link: "crm-system-eight.vercel.app",
+    github: "https://github.com/Kian2002/CRM-System",
+    tags: ["Next.js", "TypeScript", "React", "Supabase", "Prisma", "Tailwind", "NextAuth", "Bcrypt"],
+  },
+  {
+    title: "FIFA World Cup Simulation",
+    description: "This project involved the creation of a FIFA World Cup simulation using the programming language C++. This simulation incorporated the rules and regulations of the FIFA World Cup, including penalty kicks, tiebreakers, and the determination of third place. Real data from teams was used to construct a realistic representation of football matches.",
+    image: "",
+    link: "https://github.com/Kian2002/Tournament-Simulation-cpp",
+    github: "https://github.com/Kian2002/Tournament-Simulation-cpp",
+    tags: ["C++", "OOP"],
+  },
+  {
+    title: "Job App",
+    description: "This app is a mobile application built using React Native framework that allows users to search for job opportunities and apply for them directly from their smartphones. With a clean and intuitive interface, users can easily search for job listings using keywords and location. The app also provides users with the ability to save jobs to their favorites list and look back on them. Additionally, users can update their profile information to keep their job applications up-to-date. [Some Features Not Yet Implemented]",
+    image: "https://camo.githubusercontent.com/0a253cb59b20f0351b9830f337d34f0d1a01f244178343a03180026db5e6fa13/68747470733a2f2f692e696d6775722e636f6d2f736334614143792e706e67",
+    link: "https://github.com/Kian2002/Job-App-React-Native",
+    github: "https://github.com/Kian2002/Job-App-React-Native",
+    tags: ["React Native", "TypeScript", "Expo", "NativeWind"],
+  },
+  {
+    title: "Dall-e Clone",
+    description: "This project involved recreating the popular Dall-E image generation application using the OpenAI API. The frontend of the application was built using React, Typescript, and Tailwind, while the backend was constructed using Node, Express, Mongoose, OpenAI, and Cloudinary.",
+    image: "",
+    link: "https://dall-e-clone-rho.vercel.app/",
+    github: "https://github.com/Kian2002/DALL-E-Clone",
+    tags: ["React", "TypeScript", "Node", "Express", "MongoDB", "Cloudinary", "OpenAI", "Tailwind"],
   },
 ]
+
+// project template
+// {
+//   title: "",
+//   description: "",
+//   image: "",
+//   link: "",
+//   github: "",
+//   tags: [],
+// },
