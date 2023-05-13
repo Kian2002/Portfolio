@@ -9,4 +9,5 @@ export interface IProject {
 
 export interface ProjectProps {
     project: IProject;
+    index: number;
 }
