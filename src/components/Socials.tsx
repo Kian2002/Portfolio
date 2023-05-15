@@ -25,7 +25,7 @@ const Socials = () => {
           className="invert"
         />
       </Link>
-      <a href="/resume-apr-27.pdf" download>
+      <a href="/resume.pdf" download>
         <Image
           src={resume}
           alt="resume"
