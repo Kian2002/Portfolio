@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
@@ -9,30 +9,51 @@ import { projects } from "@/constants";
 import { Notification } from "@/components";
 
 const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    const card = cardRef.current;
+
+    if (img && card) {
+      card.addEventListener("mouseenter", () => {
+        img.classList.add("scale-105");
+      });
+
+      card.addEventListener("mouseleave", () => {
+        img.classList.remove("scale-105");
+      });
+    }
+  }, []);
+
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         type: "spring",
         delay: index < 3 ? index * 0.5 : index * 0.2,
         duration: 0.75,
         ease: "easeOut",
       }}
+      className="w-full h-full"
     >
-      <Tilt
-        className="w-full rounded-2xl shadow-xl cursor-pointer bg-secondary p-5 sm:w-[360px]"
-        tiltMaxAngleX={10}
-        tiltMaxAngleY={10}
-        glareEnable={true}
-        glareMaxOpacity={0.45}
-        glarePosition="all"
-        transitionSpeed={2500}
-        gyroscope={true}
-      >
-        <Link href={project.link} passHref target="_blank">
-          <div className="relative w-full h-[230px]">
+      <Link href={project.link} passHref target="_blank">
+        <Tilt
+          className="w-full h-full rounded-2xl shadow-xl cursor-pointer bg-secondary p-5 flex flex-col gap-3"
+          tiltMaxAngleX={10}
+          tiltMaxAngleY={10}
+          glareEnable={true}
+          glareMaxOpacity={0.45}
+          glarePosition="all"
+          transitionSpeed={2500}
+          gyroscope={true}
+        >
+          <div className="relative w-full h-[230px] rounded-2xl">
             <Image
+              ref={imgRef}
               src={project.image}
               alt={project.title}
               fill
@@ -40,24 +61,22 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
             />
           </div>
 
-          <div className="flex flex-col justify-between mt-5">
+          <div className="flex flex-col gap-2 flex-1">
             <h3 className="text-white font-black text-[30px]">
               {project.title}
             </h3>
-            <p className="text-tertiary text-[14px] mt-2">
-              {project.description}
-            </p>
+            <p className="text-tertiary text-[14px]">{project.description}</p>
           </div>
 
-          <div className="mt-5">
+          <div className={`min-h-[100px] grid grid-rows-4 grid-cols-2`}>
             {project.tags.map((tag, index) => (
               <span key={index} className="text-tertiary text-[14px]">
-                {tag} {index !== project.tags.length - 1 && "/ "}
+                #{tag}{" "}
               </span>
             ))}
           </div>
-        </Link>
-      </Tilt>
+        </Tilt>
+      </Link>
     </motion.div>
   );
 };
@@ -106,7 +125,7 @@ const Projects = () => {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-center md:max-w-none max-w-[400px] mx-auto mt-10">
         {loadedProjects.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}
