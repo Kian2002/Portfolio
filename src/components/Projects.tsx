@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ProjectProps } from "@/constants/types";
 import { projects } from "@/constants";
 import { Notification } from "@/components";
+import { github } from "../../public";
 
 const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
   const imgRef = useRef<HTMLImageElement>(null);
@@ -52,12 +53,25 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
           gyroscope={true}
         >
           <div className="relative w-full h-[230px] rounded-2xl">
+            <Link
+              href={project.github}
+              target="_blank"
+              className="absolute z-10 right-2 top-2 bg-white p-1 rounded-full border border-black"
+            >
+              <Image
+                src={github}
+                alt="github"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+            </Link>
             <Image
               ref={imgRef}
               src={project.image}
               alt={project.title}
               fill
-              className="rounded-2xl w-full h-full object-cover"
+              className="rounded-2xl w-full h-full object-cover cursor-default"
             />
           </div>
 
