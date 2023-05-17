@@ -41,40 +41,39 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
       }}
       className="w-full h-full"
     >
-      <Link href={project.link} passHref target="_blank">
-        <Tilt
-          className="w-full h-full rounded-2xl shadow-xl cursor-pointer bg-secondary p-5 flex flex-col gap-3"
-          tiltMaxAngleX={10}
-          tiltMaxAngleY={10}
-          glareEnable={true}
-          glareMaxOpacity={0.45}
-          glarePosition="all"
-          transitionSpeed={2500}
-          gyroscope={true}
-        >
-          <div className="relative w-full h-[230px] rounded-2xl">
-            <Link
-              href={project.github}
-              target="_blank"
-              className="absolute z-10 right-2 top-2 bg-white p-1 rounded-full border border-black"
-            >
-              <Image
-                src={github}
-                alt="github"
-                width={30}
-                height={30}
-                className="rounded-full"
-              />
-            </Link>
+      <Tilt
+        className="w-full h-full rounded-2xl shadow-xl cursor-pointer bg-secondary p-5 flex flex-col gap-3"
+        tiltMaxAngleX={10}
+        tiltMaxAngleY={10}
+        glareEnable={true}
+        glareMaxOpacity={0.45}
+        glarePosition="all"
+        transitionSpeed={2500}
+        gyroscope={true}
+      >
+        <div className="relative w-full h-[230px] rounded-2xl">
+          <Link
+            href={project.github}
+            target="_blank"
+            className="absolute z-10 right-2 top-2 bg-white p-1 rounded-full border border-black"
+          >
             <Image
-              ref={imgRef}
-              src={project.image}
-              alt={project.title}
-              fill
-              className="rounded-2xl w-full h-full object-cover cursor-default"
+              src={github}
+              alt="github"
+              width={30}
+              height={30}
+              className="rounded-full"
             />
-          </div>
-
+          </Link>
+          <Image
+            ref={imgRef}
+            src={project.image}
+            alt={project.title}
+            fill
+            className="rounded-2xl w-full h-full object-cover cursor-default"
+          />
+        </div>
+        <Link href={project.link} passHref target="_blank">
           <div className="flex flex-col gap-2 flex-1">
             <h3 className="text-white font-black text-[30px]">
               {project.title}
@@ -89,8 +88,8 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
               </span>
             ))}
           </div>
-        </Tilt>
-      </Link>
+        </Link>
+      </Tilt>
     </motion.div>
   );
 };
