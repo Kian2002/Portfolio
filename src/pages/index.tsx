@@ -1,5 +1,13 @@
 import Head from "next/head";
-import { Navbar, Hero, About, Work, Skills, Projects } from "@/components";
+import {
+  Navbar,
+  Hero,
+  About,
+  Work,
+  Skills,
+  Projects,
+  Contact,
+} from "@/components";
 
 import { Poppins } from "next/font/google";
 
@@ -29,6 +37,7 @@ export default function Home() {
         <Skills />
         <Work />
         <Projects />
+        <Contact />
       </main>
     </>
   );

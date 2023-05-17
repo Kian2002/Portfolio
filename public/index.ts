@@ -31,6 +31,7 @@ import * as postgres from "./skills/postgres.svg";
 import * as firebase from "./skills/firebase.svg";
 import * as postman from "./skills/postman.svg";
 import * as git from "./skills/git-alt.svg";
+import * as contact from "./contact.png"
 
 export {
   menu,
@@ -66,4 +67,5 @@ export {
   firebase,
   postman,
   git,
+  contact,
 };

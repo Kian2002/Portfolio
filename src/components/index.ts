@@ -9,5 +9,6 @@ import Work from "./Work";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Notification from "./Notification";
+import Contact from "./Contact";
 
-export { Navbar, Hero, About, Orb, ScrollNotifier, Socials, Menu, Work, Skills, Projects, Notification };
+export { Navbar, Hero, About, Orb, ScrollNotifier, Socials, Menu, Work, Skills, Projects, Notification, Contact };
