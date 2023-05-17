@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import { ProjectProps } from "@/constants/types";
 import { projects } from "@/constants";
@@ -13,9 +13,16 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const [isInView, setIsInView] = useState(false);
+  const view = useInView(cardRef, { margin: "100%" });
+
   useEffect(() => {
     const img = imgRef.current;
     const card = cardRef.current;
+
+    if (view) {
+      setIsInView(true);
+    }
 
     if (img && card) {
       card.addEventListener("mouseenter", () => {
@@ -26,13 +33,13 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
         img.classList.remove("scale-105");
       });
     }
-  }, []);
+  }, [view]);
 
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: "100%" }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{
         type: "spring",
         delay: index < 3 ? index * 0.5 : index * 0.2,
