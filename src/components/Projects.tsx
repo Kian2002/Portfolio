@@ -35,6 +35,10 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
     }
   }, [view]);
 
+  const handleCardClick = () => {
+    window.open(project.link, "_blank");
+  };
+
   return (
     <motion.div
       ref={cardRef}
@@ -49,7 +53,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
       className="w-full h-full"
     >
       <Tilt
-        className="w-full h-full rounded-2xl shadow-xl cursor-pointer bg-secondary p-5 flex flex-col gap-3"
+        className="w-full h-full rounded-2xl shadow-xl bg-secondary p-5 flex flex-col gap-3"
         tiltMaxAngleX={10}
         tiltMaxAngleY={10}
         glareEnable={true}
@@ -80,22 +84,30 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
             className="rounded-2xl w-full h-full object-cover cursor-default"
           />
         </div>
-        <Link href={project.link} passHref target="_blank">
-          <div className="flex flex-col gap-2 flex-1">
+
+        <div className="flex flex-col gap-2 flex-1">
+          <div className="flex justify-between">
             <h3 className="text-white font-black text-[30px]">
               {project.title}
             </h3>
-            <p className="text-tertiary text-[14px]">{project.description}</p>
+            <button
+              className="text-secondary font-semibold text-[10px] bg-white px-2 rounded"
+              onClick={handleCardClick}
+            >
+              Live Demo
+            </button>
           </div>
 
-          <div className={`min-h-[100px] grid grid-rows-4 grid-cols-2`}>
-            {project.tags.map((tag, index) => (
-              <span key={index} className="text-tertiary text-[14px]">
-                #{tag}{" "}
-              </span>
-            ))}
-          </div>
-        </Link>
+          <p className="text-tertiary text-[14px]">{project.description}</p>
+        </div>
+
+        <div className={`min-h-[100px] grid grid-rows-4 grid-cols-2`}>
+          {project.tags.map((tag, index) => (
+            <span key={index} className="text-tertiary text-[14px]">
+              #{tag}{" "}
+            </span>
+          ))}
+        </div>
       </Tilt>
     </motion.div>
   );
