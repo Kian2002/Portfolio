@@ -10,7 +10,7 @@ const Socials = () => {
       <Link href="https://www.linkedin.com/in/kianabd/" target="_blank">
         <Image
           src={linkedin}
-          alt="linkedin"
+          alt="Link to Kian Abdollahzadeh's LinkedIn profile"
           width={25}
           height={25}
           className="invert"
@@ -19,7 +19,7 @@ const Socials = () => {
       <Link href="https://github.com/Kian2002/" target="_blank">
         <Image
           src={github}
-          alt="github"
+          alt="Link to Kian Abdollahzadeh's GitHub profile"
           width={25}
           height={25}
           className="invert"
@@ -28,7 +28,7 @@ const Socials = () => {
       <a href="/resume.pdf" download>
         <Image
           src={resume}
-          alt="resume"
+          alt="Link to Kian Abdollahzadeh's resume"
           width={18}
           height={18}
           className="invert"

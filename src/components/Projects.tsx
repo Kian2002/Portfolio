@@ -70,7 +70,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
           >
             <Image
               src={github}
-              alt="github"
+              alt="Kian Abdollahzadeh's GitHub profile"
               width={30}
               height={30}
               className="rounded-full"

@@ -19,7 +19,7 @@ const Orb = () => {
       >
         <Image
           src={starwars}
-          alt="starwars"
+          alt="Kian Abdollahzadeh as a star wars character using the force to pull the orb"
           className="absolute top-0 left-0 right-0 bottom-0 h-72 w-72 sm:h-96 sm:w-96"
         />
       </motion.div>
@@ -52,13 +52,13 @@ const Orb = () => {
 
           <Image
             src={mobileHero}
-            alt="bitmoji image of Kian"
+            alt="bitmoji image of Kian Abdollahzadeh inside an orb with a star wars character pulling the orb"
             className="md:hidden h-full w-full object-scale-down"
           />
 
           <Image
             src={hero}
-            alt="bitmoji image of Kian"
+            alt="bitmoji image of Kian Abdollahzadeh inside an orb with a star wars character pulling the orb"
             className="hidden md:block h-full w-full object-scale-down"
           />
         </div>

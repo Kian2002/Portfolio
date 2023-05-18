@@ -138,7 +138,10 @@ const Contact = () => {
         transition={{ duration: 1 }}
         className="w-full h-full"
       >
-        <Image src={contact} alt="contact" />
+        <Image
+          src={contact}
+          alt="Bitmoji of Kian Abdollahzadeh waving goodbye"
+        />
       </motion.div>
     </section>
   );

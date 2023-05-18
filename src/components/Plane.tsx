@@ -15,7 +15,11 @@ const Plane = () => {
       }}
       className="absolute w-32 h-32 top-20 right-0 rounded translate-x-1/2 translate-y-1/2"
     >
-      <Image src={flying} alt="flying" className="w-32 h-32 hidden lg:block" />
+      <Image
+        src={flying}
+        alt="Bitmoji image of Kian Abdollahzadeh in a paper airplane flying onto the screen"
+        className="w-32 h-32 hidden lg:block"
+      />
     </motion.div>
   );
 };

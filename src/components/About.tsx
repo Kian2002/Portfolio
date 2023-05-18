@@ -59,7 +59,7 @@ const About = () => {
               <div className="bg-[#3b000b] rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
                 <Image
                   src={niche.icon}
-                  alt="web-development"
+                  alt={niche.title}
                   className="w-16 h-16 object-contain invert"
                 />
 

@@ -43,7 +43,7 @@ const Work = () => {
                 <div className="flex justify-center items-center w-full h-full">
                   <Image
                     src={experience.icon}
-                    alt={experience.company_name}
+                    alt={experience.company_name + " logo"}
                     className="w-[60%] h-[60%] object-contain"
                   />
                 </div>
