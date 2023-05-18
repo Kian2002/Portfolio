@@ -1,10 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 
 import { contact } from "../../public";
 
 const Contact = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID!;
+    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID!;
+    const key = process.env.NEXT_PUBLIC_KEY!;
+
+    const email = {
+      from_name: form.name,
+      to_name: "Kian Abdollahzadeh",
+      from_email: form.email,
+      to_email: "canadakurdistan@gmail.com",
+      message: form.message,
+    };
+
+    emailjs
+      .send(serviceId, templateId, email, key)
+      .then((res) => {
+        alert("Message sent successfully");
+        setForm({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        alert("Message failed to send " + err.text);
+      })
+      .finally(() => setLoading(false));
+  };
+
   return (
     <section
       id="contact"
@@ -24,51 +67,69 @@ const Contact = () => {
             Contact.
           </h2>
         </div>
+        {loading ? (
+          <p className="text-white">Loading...</p>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col justify-start items-start mt-10 w-full gap-5"
+          >
+            <div className="w-full">
+              <label htmlFor="name" className="text-white">
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
+                placeholder="Enter your name..."
+                required
+                value={form.name}
+                onChange={handleChange}
+              />
+            </div>
 
-        <form className="flex flex-col justify-start items-start mt-10 w-full gap-5">
-          <div className="w-full">
-            <label htmlFor="name" className="text-white">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
-              placeholder="Enter your name..."
-            />
-          </div>
+            <div className="w-full">
+              <label htmlFor="email" className="text-white">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
+                placeholder="Enter your email address..."
+                required
+                value={form.email}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="w-full">
-            <label htmlFor="email" className="text-white">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
-              placeholder="Enter your email address..."
-            />
-          </div>
+            <div className="w-full">
+              <label htmlFor="message" className="text-white">
+                Message
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
+                rows={5}
+                placeholder="Type your message here..."
+                required
+                value={form.message}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="w-full">
-            <label htmlFor="message" className="text-white">
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
-              rows={5}
-              placeholder="Type your message here..."
-            />
-          </div>
-
-          <button className="bg-white text-primary font-semibold py-2 px-4 rounded mt-4">
-            Send
-          </button>
-        </form>
+            <button
+              className="bg-white text-primary font-semibold py-2 px-4 rounded mt-4"
+              disabled={loading}
+            >
+              Send
+            </button>
+          </form>
+        )}
       </motion.div>
 
       <motion.div
