@@ -224,6 +224,30 @@ export const projects: IProject[] = [
     github: "https://github.com/Kian2002/DALL-E-Clone",
     tags: ["React", "TypeScript", "Node", "Express", "MongoDB", "Cloudinary", "OpenAI", "Tailwind"],
   },
+  {
+    title: "REST-Countries",
+    description: "This web application was developed using HTML, CSS, and JavaScript, with data retrieved from the REST Countries API. This user-friendly app provides a seamless experience for users to explore various countries around the world.",
+    image: "https://i.imgur.com/FlaxZij.png",
+    link: "https://kian2002.github.io/REST-Countries/",
+    github: "https://github.com/Kian2002/REST-Countries",
+    tags: ["HTML", "CSS" , "JavaScript", "Vite"],
+  },
+  {
+    title: "React-CV",
+    description: "This CV Application is a dynamic web application built using React. It allows users to create and showcase their professional resumes",
+    image: "https://i.imgur.com/4U6vSWF.png",
+    link: "https://kian2002.github.io/React-CV/",
+    github: "https://github.com/Kian2002/React-CV",
+    tags: ["React", "Vite", "Modular CSS"],
+  },
+  {
+    title: "Memory-game",
+    description: "This is a game where players click on cards, aiming to click all the cards without selecting the same one twice, offering an enjoyable challenge of memory skills and concentration.",
+    image: "https://i.imgur.com/0b19SAb.png",
+    link: "https://kian2002.github.io/memory-game/",
+    github: "https://github.com/Kian2002/memory-game",
+    tags: ["React", "CSS", "API"],
+  },
 ]
 
 // project template
