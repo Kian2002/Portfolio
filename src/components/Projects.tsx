@@ -56,9 +56,6 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
         className="w-full h-full rounded-2xl shadow-xl bg-secondary p-5 flex flex-col gap-3"
         tiltMaxAngleX={10}
         tiltMaxAngleY={10}
-        glareEnable={true}
-        glareMaxOpacity={0.45}
-        glarePosition="all"
         transitionSpeed={2500}
         gyroscope={true}
       >
