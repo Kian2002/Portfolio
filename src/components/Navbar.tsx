@@ -20,7 +20,9 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <h1 className="font-black text-3xl text-primary">{"<portfolio>"}</h1>
+          <h1 className="font-black text-3xl text-primary">
+            {"<Kian Abdollahzadeh>"}
+          </h1>
         </Link>
 
         <div className="sm:flex gap-10 hidden">
