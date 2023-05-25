@@ -32,13 +32,16 @@ const Skills = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
             key={skill.title}
-            className="border bg-secondary rounded px-12 py-6 flex justify-center items-center"
+            className="border bg-secondary rounded px-12 py-6 flex flex-col justify-center items-center"
           >
             <Image
               src={skill.icon}
               alt={skill.title}
               className="invert w-36 h-24"
             />
+            <p className="text-white font-bold text-lg text-center">
+              {skill.title}
+            </p>
           </motion.div>
         ))}
       </div>
