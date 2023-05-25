@@ -40,7 +40,6 @@ const Hero = () => {
 
       <Orb />
       <ScrollNotifier />
-      <Plane />
     </section>
   );
 };
