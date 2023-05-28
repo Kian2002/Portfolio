@@ -54,9 +54,9 @@ const About = () => {
                 bounce: 0.5,
                 ease: "easeInOut",
               }}
-              className="w-full bg-white p-[1px] rounded-[20px] shadow-card"
+              className="w-full p-[1px]"
             >
-              <div className="bg-[#3b000b] rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+              <div className="bg-black rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
                 <Image
                   src={niche.icon}
                   alt={niche.title}

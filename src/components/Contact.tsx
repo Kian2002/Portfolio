@@ -57,7 +57,7 @@ const Contact = () => {
         initial={{ opacity: 0, x: -300 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="flex flex-col justify-start items-start bg-secondary p-6 rounded-2xl w-full"
+        className="flex flex-col justify-start items-start bg-black p-6 rounded-2xl w-full"
       >
         <div>
           <p className="sm:text-[18px] text-[14px] text-tertiary uppercase tracking-wider">
@@ -82,7 +82,7 @@ const Contact = () => {
                 type="text"
                 name="name"
                 id="name"
-                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
+                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-4"
                 placeholder="Enter your name..."
                 required
                 value={form.name}
@@ -98,7 +98,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 id="email"
-                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
+                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-4"
                 placeholder="Enter your email address..."
                 required
                 value={form.email}
@@ -113,7 +113,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 id="message"
-                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-2"
+                className="bg-transparent border-b-2 border-white w-full focus:outline-none focus:border-primary py-4"
                 rows={5}
                 placeholder="Type your message here..."
                 required
@@ -123,7 +123,7 @@ const Contact = () => {
             </div>
 
             <button
-              className="bg-white text-primary font-semibold py-2 px-4 rounded mt-4"
+              className="bg-primary text-white font-medium py-2 px-4 rounded mt-4"
               disabled={loading}
             >
               Send

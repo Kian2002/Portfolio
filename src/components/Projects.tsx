@@ -53,7 +53,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
       className="w-full h-full"
     >
       <Tilt
-        className="w-full h-full rounded-2xl shadow-xl bg-secondary p-5 flex flex-col gap-3"
+        className="w-full h-full rounded-2xl shadow-xl bg-black p-5 flex flex-col gap-3"
         tiltMaxAngleX={10}
         tiltMaxAngleY={10}
         transitionSpeed={2500}
@@ -84,11 +84,11 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
 
         <div className="flex flex-col gap-2 flex-1">
           <div className="flex justify-between">
-            <h3 className="text-white font-black text-[30px]">
+            <h3 className="text-primary font-black text-[30px]">
               {project.title}
             </h3>
             <button
-              className="text-secondary font-semibold text-[10px] bg-white px-2 rounded"
+              className="text-primary font-semibold text-[10px] bg-white px-2 rounded"
               onClick={handleCardClick}
             >
               Live Demo
@@ -161,7 +161,10 @@ const Projects = () => {
       </div>
 
       <div className="flex justify-center mt-20">
-        <button className="bg-secondary p-4 rounded" onClick={loadMoreProjects}>
+        <button
+          className="bg-black text-white p-4 rounded hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300 ease-in-out"
+          onClick={loadMoreProjects}
+        >
           Show More
         </button>
       </div>
