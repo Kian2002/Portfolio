@@ -22,7 +22,7 @@ const Hero = () => {
               transition={{
                 type: "spring",
                 stiffness: 120,
-                duration: 1.5,
+                duration: 1,
               }}
               className="text-primary absolute ml-3"
             >

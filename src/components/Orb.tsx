@@ -13,7 +13,7 @@ const Orb = () => {
           x: ["100%", "50%", "100%"],
         }}
         transition={{
-          duration: 3,
+          duration: 2,
         }}
         className="hidden sm:block"
       >
@@ -33,7 +33,7 @@ const Orb = () => {
           scale: [1, 1.05, 1],
         }}
         transition={{
-          duration: 5,
+          duration: 3.33,
         }}
       >
         <div className="border-8 border-primary rounded-full h-72 w-72 sm:h-96 sm:w-96 m-auto relative">
