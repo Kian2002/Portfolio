@@ -29,7 +29,7 @@ const Hero = () => {
               Kian
             </motion.span>
           </h1>
-          <p className="text-[#dfd9ff] font-medium sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2 text-white-100">
+          <p className="text-white font-medium sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2 text-white-100">
             I develop Fullstack applications, mobile{" "}
             <br className="sm:block hidden" />
             apps, and dabble in some game development.
