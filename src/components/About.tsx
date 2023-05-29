@@ -1,19 +1,31 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import Image from "next/image";
 
 import { niches } from "@/constants";
 
 const About = () => {
+  const divRef = useRef<HTMLDivElement>(null);
+
+  const [isInView, setIsInView] = useState(false);
+  const view = useInView(divRef);
+
+  useEffect(() => {
+    if (view) {
+      setIsInView(true);
+    }
+  }, [view]);
+
   return (
     <section
       id="about"
       className="relative w-full min-h-screen py-24 mx-auto max-w-7xl overflow-hidden px-6 sm:px-16"
     >
       <motion.div
+        ref={divRef}
         initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
+        animate={isInView && { opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
         transition={{ duration: 0.4 }}
       >
         <p className="sm:text-[18px] text-[14px] text-tertiary uppercase tracking-wider">
@@ -25,8 +37,9 @@ const About = () => {
       </motion.div>
 
       <motion.p
+        ref={divRef}
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={isInView && { opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="mt-6 mb-12 text-white text-[17px] max-w-3xl leading-[30px]"
       >
@@ -46,8 +59,8 @@ const About = () => {
         {niches.map((niche, index) => (
           <Tilt key={niche.title} className="xs:w-[250px] w-full rounded-3xl">
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: "-100%" }}
+              whileInView={{ opacity: 1, x: "0%" }}
               transition={{
                 type: "spring",
                 duration: index * 0.5,
