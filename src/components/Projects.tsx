@@ -135,14 +135,18 @@ const Projects = () => {
     }
   };
 
+  const divRef = useRef<HTMLDivElement>(null);
+  const view = useInView(divRef);
+
   return (
     <section
       id="projects"
       className="relative w-full min-h-screen py-20 mx-auto max-w-7xl overflow-hidden px-6 sm:px-16"
     >
       <motion.div
+        ref={divRef}
         initial={{ opacity: 0, x: 150 }}
-        whileInView={{ opacity: [0.05, 0.1, 0.2, 1], x: 0 }}
+        animate={view && { opacity: [0.05, 0.1, 0.2, 1], x: 0 }}
         transition={{ duration: 0.5 }}
         className="flex flex-col justify-start items-start"
       >
