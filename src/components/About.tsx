@@ -8,14 +8,7 @@ import { niches } from "@/constants";
 const About = () => {
   const divRef = useRef<HTMLDivElement>(null);
 
-  const [isInView, setIsInView] = useState(false);
   const view = useInView(divRef);
-
-  useEffect(() => {
-    if (view) {
-      setIsInView(true);
-    }
-  }, [view]);
 
   return (
     <section
@@ -25,7 +18,7 @@ const About = () => {
       <motion.div
         ref={divRef}
         initial={{ opacity: 0, y: -30 }}
-        animate={isInView && { opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
+        animate={view && { opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
         transition={{ duration: 0.4 }}
       >
         <p className="sm:text-[18px] text-[14px] text-tertiary uppercase tracking-wider">
@@ -37,9 +30,8 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        ref={divRef}
         initial={{ opacity: 0, y: 50 }}
-        animate={isInView && { opacity: 1, y: 0 }}
+        animate={view && { opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="mt-6 mb-12 text-white text-[17px] max-w-3xl leading-[30px]"
       >

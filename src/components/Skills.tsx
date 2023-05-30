@@ -31,10 +31,10 @@ const Skills = () => {
       <div className="flex flex-wrap mt-20 gap-10 justify-center items-center">
         {skills.map((skill) => (
           <motion.div
-            initial={{ opacity: 0, scale: 1.1 }}
-            whileInView={{ opacity: [0.25, 0.5, 0.75, 1], scale: 1 }}
+            initial={{ rotate: 360 }}
+            animate={view && { rotate: 0 }}
             whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
             key={skill.title}
             className="bg-black rounded px-12 py-6 flex flex-col justify-center items-center border-b-2 border-primary"
           >
