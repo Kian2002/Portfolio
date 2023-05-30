@@ -1,18 +1,22 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 import { skills } from "@/constants";
 import Image from "next/image";
 
 const Skills = () => {
+  const divRef = useRef<HTMLDivElement>(null);
+  const view = useInView(divRef);
+
   return (
     <section
       id="skills"
       className="relative w-full min-h-screen py-20 mx-auto max-w-7xl overflow-hidden px-6 sm:px-16"
     >
       <motion.div
+        ref={divRef}
         initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
+        animate={view && { opacity: [0.05, 0.1, 0.2, 1], y: 0 }}
         transition={{ duration: 0.4 }}
         className="flex flex-col justify-center items-center text-center"
       >
@@ -27,10 +31,10 @@ const Skills = () => {
       <div className="flex flex-wrap mt-20 gap-10 justify-center items-center">
         {skills.map((skill) => (
           <motion.div
-            initial={{ x: -100 }}
-            whileInView={{ x: 0 }}
+            initial={{ opacity: 0, scale: 1.1 }}
+            whileInView={{ opacity: [0.25, 0.5, 0.75, 1], scale: 1 }}
             whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.6 }}
             key={skill.title}
             className="bg-black rounded px-12 py-6 flex flex-col justify-center items-center border-b-2 border-primary"
           >
