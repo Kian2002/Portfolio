@@ -91,7 +91,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
               className="text-primary font-semibold text-[10px] bg-white px-2 rounded"
               onClick={handleCardClick}
             >
-              Live Demo
+              Demo
             </button>
           </div>
 
