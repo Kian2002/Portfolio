@@ -225,6 +225,14 @@ export const projects: IProject[] = [
     tags: ["React", "TypeScript", "Node", "Express", "MongoDB", "Cloudinary", "OpenAI", "Tailwind"],
   },
   {
+  title: "YT Word Count",
+  description: "This project is a Python script that counts the number of times a word appears in a YouTube video. The script uses pytube to download the video, ffmpeg to convert the video to audio, Azure Speech to Text to convert the audio to text, and NLTK to tokenize and count the words.",
+  image: "https://i.imgur.com/r326DAW.png",
+  link: "https://github.com/Kian2002/Words-In-YouTube-Video",
+  github: "https://github.com/Kian2002/Words-In-YouTube-Video",
+  tags: ["Python", "NLTK", "Azure Speech"],
+  },
+  {
     title: "REST-Countries",
     description: "This web application was developed using HTML, CSS, and JavaScript, with data retrieved from the REST Countries API. This user-friendly app provides a seamless experience for users to explore various countries around the world.",
     image: "https://i.imgur.com/FlaxZij.png",
