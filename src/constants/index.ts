@@ -185,6 +185,14 @@ export const experiences = [
 
 export const projects: IProject[] = [
   {
+    title: "Spotify Clone",
+    description: "This is a Spotify clone web app created using Next.js, Tailwind CSS, and Supabase. It offers a sleek user interface, real-time music data from user uploaded songs and images, and seamless navigation. Supabase handles the backend, providing secure database functionality and user authentication.",
+    image: "https://i.imgur.com/g2x74BG.png",
+    link: "https://spotify-kian.vercel.app/",
+    github: "https://github.com/Kian2002/spotify-clone",
+    tags: ["Next.js", "TypeScript", "React", "Tailwind", "Supabase", "Radix-UI", "React-Icons", "React-hot-toast", "Zustand"],
+  },
+  {
     title: "E-Commerce",
     description: "This is an e-commerce app built using React, React Router, Framer Motion, and React-responsive-carousel for the front end, and Node, Express, Cloudinary, and axios for the backend. The app uses Stripe for a test/example checkout and Rawg API for the data.",
     image: "https://camo.githubusercontent.com/39bffa5e4727272709902837f0e7b017bf2eb0f40bd02be53dfd5d6cdb47a80e/68747470733a2f2f692e696d6775722e636f6d2f344d55776763552e706e67",
@@ -193,20 +201,20 @@ export const projects: IProject[] = [
     tags: ["TypeScript", "React", "Node", "Express", "MongoDB", "Cloudinary", "Stripe", "Rawg API"],
   },
   {
-    title: "CRM-System",
-    description: "This project is a CRM system built using Next.js, TypeScript, and React with Supabase for the database, Prisma for ORM, Tailwind for styling, NextAuth for authentication, and Bcrypt for password hashing.",
-    image: "https://i.imgur.com/gMpkatW.png",
-    link: "https://crm-system-eight.vercel.app",
-    github: "https://github.com/Kian2002/CRM-System",
-    tags: ["Next.js", "TypeScript", "React", "Supabase", "Prisma", "Tailwind", "NextAuth", "Bcrypt"],
-  },
-  {
     title: "FIFA World Cup",
     description: "This project is a FIFA World Cup simulation using C++. This simulation incorporated the rules and regulations of the World Cup, including penalty kicks, tiebreakers, and the determination of third place. Real data from teams were used to construct a realistic representation of football matches.",
     image: "https://i.imgur.com/xFWxgRs.png",
     link: "https://github.com/Kian2002/Tournament-Simulation-cpp",
     github: "https://github.com/Kian2002/Tournament-Simulation-cpp",
     tags: ["C++", "OOP"],
+  },
+  {
+    title: "CRM-System",
+    description: "This project is a CRM system built using Next.js, TypeScript, and React with Supabase for the database, Prisma for ORM, Tailwind for styling, NextAuth for authentication, and Bcrypt for password hashing.",
+    image: "https://i.imgur.com/gMpkatW.png",
+    link: "https://crm-system-eight.vercel.app",
+    github: "https://github.com/Kian2002/CRM-System",
+    tags: ["Next.js", "TypeScript", "React", "Supabase", "Prisma", "Tailwind", "NextAuth", "Bcrypt"],
   },
   {
     title: "Job App",
