@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import { Orb, ScrollNotifier, Socials } from "@/components";
-import Plane from "./Plane";
 
 const Hero = () => {
   return (

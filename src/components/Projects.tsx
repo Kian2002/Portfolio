@@ -48,7 +48,6 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
         type: "spring",
         delay: index < 3 ? index * 0.5 : index * 0.2,
         duration: 0.75,
-        ease: "easeOut",
       }}
       className="w-full h-full"
     >
@@ -59,7 +58,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
         transitionSpeed={2500}
         gyroscope={true}
       >
-        <div className="relative w-full h-[230px] rounded-2xl">
+        <div className="relative w-full h-[250px] rounded-2xl">
           <Link
             href={project.github}
             target="_blank"
@@ -73,13 +72,16 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
               className="rounded-full"
             />
           </Link>
-          <Image
-            ref={imgRef}
-            src={project.image}
-            alt={project.title}
-            fill
-            className="rounded-2xl w-full h-full object-cover cursor-default"
-          />
+
+          <div className="rounded-2xl relative aspect-square w-full h-full overflow-hidden cursor-default">
+            <Image
+              ref={imgRef}
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="flex flex-col gap-2 flex-1">
