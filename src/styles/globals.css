@@ -16,17 +16,17 @@ body {
 }
 
 .menu-gradient {
-  background: #10ac84;
+  background: #F2E5D7;
   background: -webkit-linear-gradient(to right,
-      #ffffff, #10ac84);
+      #262322, #F2E5D7);
   background: linear-gradient(to right,
-      #ffffff, #10ac84);
+      #262322, #F2E5D7);
 }
 
 .hero-gradient {
-  background: #10ac84;
-  background: linear-gradient(-90deg, #10ac84 0%, rgba(60, 51, 80, 0) 100%);
+  background: #F2E5D7;
+  background: linear-gradient(-90deg, #F2E5D7 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(-90deg,
-      #10ac84 0%,
+      #F2E5D7 0%,
       rgba(60, 51, 80, 0) 100%);
 }
