@@ -5,7 +5,7 @@ import { Orb, ScrollNotifier, Socials } from "@/components";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen mx-auto max-w-7xl overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative w-full min-h-screen mx-auto max-w-7xl overflow-hidden flex flex-col items-start justify-around">
       <div className="max-w-7xl mx-auto sm:px-16 px-6 flex flex-row items-center justify-center gap-5">
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-primary" />
