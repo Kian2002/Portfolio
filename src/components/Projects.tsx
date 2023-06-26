@@ -90,7 +90,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, index }) => {
               {project.title}
             </h3>
             <button
-              className="text-primary font-semibold text-[10px] bg-white px-2 rounded"
+              className="text-secondary font-semibold text-[10px] bg-white px-2 rounded"
               onClick={handleCardClick}
             >
               Demo
